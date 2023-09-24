@@ -1,28 +1,26 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    data: {
-        user_id: Number,
-        user_name: String,
-        back_accounts: [String],
-        id: Number,
-        name: String,
-        accounts: {
-            bank: String,
-            branch: String,
-            address: String,
-            city: String,
-            district: String,
-            state: String,
-            bank_code: String,
-            weather: {
-                temp: Number,
-                humidity: Number
-            }
-        }
-    }
+  user_id: { type: Number },
+  user_name: { type: String },
+  back_accounts: [String],
+  id: { type: Number },
+  name: { type: String },
+  accounts: {
+    bank: { type: String },
+    branch: { type: String },
+    address: { type: String },
+    city: { type: String },
+    district: { type: String },
+    state: { type: String },
+    bank_code: { type: String },
+    weather: {
+      temp: { type: Number },
+      humidity: { type: Number },
+    },
+  },
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
